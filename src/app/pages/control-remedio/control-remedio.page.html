@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración del Catálogo</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h3>Administración de remedios caseros</h3>
+      </ion-label>
+    </ion-list-header>
+    
+    <ion-item-sliding *ngFor="let tip of items">
+  
+      <ion-card button="true" [routerLink]="['/control-remedio2', tip.id]">
+        
+        <ion-card-header>
+          <ion-card-title>
+      
+            {{ tip.titulo }}
+          </ion-card-title>
+          <ion-card-subtitle>
+            Para: {{ tip.categoria }}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                    <img src="{{ tip.urlToImage }}" style = "width: 300px" />
+                </ion-col>
+              </ion-row>
+  
+            </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

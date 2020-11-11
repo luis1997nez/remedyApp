@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración del Usuario</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h3>Edita tu información</h3>
+      </ion-label>
+    </ion-list-header>
+
+    <ion-list lines = "full">
+
+
+      <ion-item *ngIf="user">
+        <ion-label position="stacked">Nombre:</ion-label>
+        <ion-input required type = "text" placeholder="Nombre"
+        [(ngModel)] ="user.nombre" ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="user">
+        <ion-label position="stacked">Apellido:</ion-label>
+        <ion-input required type = "text" placeholder="Apellido"
+        [(ngModel)] ="user.apellidos" ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="user">
+        <ion-label position="stacked">Contraseña:</ion-label>
+        <ion-input required type = "text" placeholder="Nueva contraseña"
+        [(ngModel)] ="user.clave" ></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="user">
+        <ion-label position="stacked">Ubicación:</ion-label>
+        <ion-select [(ngModel)]= "user.ubicacion"  interface="action.sheet"   placeholder="Ubicación">
+          <ion-select-option *ngFor="let item of data" [value] = "item.name" >
+            {{item.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-list>
+  
+   <ion-item-divider>
+    <ion-button position="center" color="success" size="default" (click)="saveTodo()" >Guardar cambios</ion-button>
+   </ion-item-divider>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color = "danger">
+    <ion-fab-button color = "danger" routerLink="/control-user" routerDirection="forward"
+    (click) = "onRemove(todoId)">
+      <ion-icon name = "trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

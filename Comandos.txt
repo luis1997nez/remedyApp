@@ -1,0 +1,21 @@
+-Crear una página
+ionic g page pages/inicio
+
+-Crear una ppagina sin el archivo de prueba (spec)
+ionic g page pages/alert --spec=false
+
+ionic g page pages/action --spec=false
+
+-Darle funcionamiento al boton es agregando el tributo routerLink="/alert"
+
+-Boton para regresar a una página anterior
+
+-Crear componente para declarar la estructura header
+ionic g module components
+
+-Crear componente de header sin el archivo de prueba
+ionic g component components/header --spec=false
+
+-Indicarle a angular que se creo un nuevo componente, se va app.module.ts. Tambien en el modulo de la página. Ahora para arreglar el problema se le tiene que decir a ionic que le nuevo componente tiene que se usado por otras ppaginas.
+
+-

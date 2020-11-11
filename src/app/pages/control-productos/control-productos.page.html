@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración de los Productos</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-sliding *ngFor="let tip of pro">
+  
+    <ion-card button="true" [routerLink]="['/control-productos2', tip.id]">
+      
+      <ion-card-header>
+        <ion-card-title>
+          <ion-item lines="none">
+            <ion-avatar class = "md hydrated" slot = "start">
+              <img src = "{{ tip.urlToImage }}" /> 
+            </ion-avatar>
+          {{ tip.nombre }}</ion-item>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                Descripción: {{ tip.descripcion }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Tipo: {{ tip.tipo }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Precio: ${{ tip.precio }}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                Existencia: {{ tip.existencia }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-item-sliding>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/control-productos2" routerDirection="forward">
+      <ion-icon name = "add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

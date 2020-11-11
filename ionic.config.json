@@ -1,0 +1,7 @@
+{
+  "name": "remedyApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Panel de administrador</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    <ion-item class = "borde" button = "true" [routerLink]="['/control-user']" lines="none">
+      <ion-avatar class = "md hydrated" slot = "start">
+        <img src = "assets/img/usuarios.png" />
+      </ion-avatar>
+
+      <ion-label class = "sc-ion-label-md-h sc-ion-label-md-s md hydrated" >
+        <h2>USUARIOS</h2>
+        <h3>Control sobre todos los usuarios</h3>
+        <p class="ion-text-justify">Modifique y elimine cuentas<br> de personas que no cumplan<br> con las normas</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class = "borde" button = "true" [routerLink]="['/control-remedio']" lines="none">
+      <ion-avatar class = "md hydrated" slot = "start">
+        <img src = "assets/img/remedios.png" />
+      </ion-avatar>
+
+      <ion-label class = "sc-ion-label-md-h sc-ion-label-md-s md hydrated" >
+        <h2>REMEDIOS</h2>
+        <h3>Control sobre todos los remedios caseros</h3>
+        <p class="ion-text-justify">Administre todo catálogo de remedios <br>caseros, modifique y elminine<br> aquellos remedios que no cumplan<br> con las normas de RemedyApp</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class = "borde" button = "true" [routerLink]="['/control-productos']" lines="none">
+      <ion-avatar class = "md hydrated" slot = "start">
+        <img src = "assets/img/producto.png" />
+      </ion-avatar>
+
+      <ion-label class = "sc-ion-label-md-h sc-ion-label-md-s md hydrated" >
+        <h2>PRODUCTOS DE LA TIENDA</h2>
+        <h3>Control sobre todos los productos</h3>
+        <p class="ion-text-justify">Agregue y elimine los productos<br> que se ofrecen en la tienda<br> de RemedyApp</p>
+      </ion-label>
+    </ion-item>
+    
+    
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,42 @@
+<app-header titulo="Categorías"></app-header>
+
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Categorías</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col offset="1" size="10">
+          <ion-searchbar color="greenlemon" showCancelButton="focus" cancelButtonText="Borrar" placeholder="Dolor ..." (ionInput)="showTipsFilter($event)"></ion-searchbar>
+        </ion-col>
+
+        <ion-col offset="1" size="10" *ngIf="showButtons" >
+          <ion-list lines="none">
+            <ion-item *ngFor="let but of buttons">
+              <ion-avatar slot="start">
+                <ion-img [src]="but.image"></ion-img>
+              </ion-avatar>
+              <ion-button (click)="findByCategory(but.category)" shape="round" color="greenlemon" fill="outline" expand="block">
+                <span class="text-left">
+                  {{ but.description }}
+                </span></ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+ 
+  <app-post *ngFor="let tip of tipsList" [tip]="tip"></app-post>
+
+
+</div>
+
+</ion-content>

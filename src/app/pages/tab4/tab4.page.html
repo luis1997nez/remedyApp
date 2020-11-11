@@ -1,0 +1,71 @@
+<app-header titulo="Perfil de usuario"></app-header>
+
+<ion-fab horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/editar-usuario" color="success">
+    <ion-icon name="pencil"></ion-icon>
+  </ion-fab-button>
+</ion-fab> 
+
+<!--
+<ion-item-sliding *ngFor="let todo of todos">
+<ion-fab horizontal="end" slot="fixed">
+  <ion-fab-button [routerLink]="['/editar-usuario', todo.id]" color="success">
+    <ion-icon name="pencil"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-item-sliding> -->
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h3>Datos personales</h3>
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre: {{user.nombre}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellidos: {{user.apellidos}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Correo: {{user.email}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Género: {{user.genero}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ubicación: {{user.ubicacion}}</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <img src="assets/img/cerrar.png" class = "admin" button = "true"/>
+      <img src="{{ cambio }}" class = "admin" button = "true" [routerLink] = "['/admin']"/>
+      
+    </ion-item>
+  </ion-list>
+
+    
+
+
+    <!--
+    <ion-list lines="none">
+      <ion-item-sliding>
+        <ion-item class = "no-padding">
+          <ion-label>
+            <h2>Datos</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option>
+            <ion-icon slot = "icon-only" name = "pencil-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>    </ion-list>
+-->
+
+
+  <!--
+  <app-explore-container name="Tab 4 page"></app-explore-container>-->
+</ion-content>

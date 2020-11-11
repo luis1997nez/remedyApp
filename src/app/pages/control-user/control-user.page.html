@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración de los Usuarios</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-list>
+    
+    <ion-list-header>
+      <ion-label>
+        <h3>Cuentas de usuarios</h3>
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let tip of user">
+      <ion-card button="false" [routerLink]="['/control-user2', tip.id]">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-item lines="none">
+              <ion-avatar class = "md hydrated" slot = "start">
+                <img src = "{{cambio}}" /> 
+              </ion-avatar>
+              <h1>{{ tip.nombre }} {{ tip.apellidos }}</h1>
+            </ion-item>
+          </ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="8">
+                Id: {{ tip.id }}
+              </ion-col>
+              <ion-col size="8">
+                Email: {{ tip.email }}
+              </ion-col>
+              <ion-col size="8">
+                Género: {{ tip.genero }}
+              </ion-col>
+              <ion-col size="8">
+                Ubicación: {{ tip.ubicacion }}
+              </ion-col>
+              <ion-col size="8">
+                Roll: 
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

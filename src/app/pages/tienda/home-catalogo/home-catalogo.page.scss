@@ -1,0 +1,32 @@
+.header{
+    background-color: #ff7800;
+    background: #ff7800;
+}
+.cabeza{
+    font-family: 'Segoe UI';
+    color: #7a7a7a;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.hojita{
+    float: right;
+    width: 38px;
+    margin-top: 5px;
+}
+
+
+.cart-icon {
+    font-size: 50px;
+  }
+   
+  .cart-length {
+    color: var(--ion-color-primary);
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    font-weight: 600;
+    font-size: 1em;
+    min-width: 25px;
+    z-index: 10;
+  }

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class = "cabeza">{{ titulo }}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-thumbnail style="padding: 5px !important;">
+        <ion-img (click)="onClick()" class = "hojita" src = "assets/img/tienda.png"></ion-img>
+      </ion-thumbnail>
+  </ion-buttons>
+
+    <ion-buttons slot="end">
+        <ion-thumbnail style="padding: 5px !important;">
+          <ion-img class = "hojita" src = "assets/img/hoja.png"></ion-img>
+        </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+      <ion-buttons>
+      <ion-back-button slot="start" defaultHref="app/tabs/tab1"></ion-back-button>
+
+    </ion-buttons>
+-->
+
+<ion-buttons slot="start">
+  <ion-back-button></ion-back-button>

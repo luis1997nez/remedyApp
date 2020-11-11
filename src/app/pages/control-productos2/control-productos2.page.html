@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración del producto</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines = "full">
+      <ion-item *ngIf="todo">
+        <ion-input required type = "text" placeholder="Nombre"
+        [(ngModel)] ="todo.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="todo">
+        <ion-input required type = "text" placeholder="Descripción"
+        [(ngModel)] ="todo.descripcion"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="todo">
+        <ion-input required type = "text" placeholder="Tipo"
+        [(ngModel)] ="todo.tipo"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="todo">
+        <ion-input required type = "number" placeholder="Precio"
+        [(ngModel)] ="todo.precio"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="todo">
+        <ion-label position="stacked">Existencia:</ion-label>
+        <ion-select [(ngModel)]= "todo.existencia"  interface="action.sheet"   placeholder="Ubicación">
+          <ion-select-option *ngFor="let item of data" [value] = "item.name" >
+            {{item.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="todo">
+        <ion-input required type = "text" placeholder="URL"
+        [(ngModel)] ="todo.urlToImage"></ion-input>
+      </ion-item>
+
+
+  </ion-list>
+
+  <ion-button expand = "full" (click)="saveTodo()">Save</ion-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color = "danger">
+    <ion-fab-button color = "danger" routerLink="/control-productos" routerDirection="forward"
+    (click) = "onRemove(todoId)">
+      <ion-icon name = "trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

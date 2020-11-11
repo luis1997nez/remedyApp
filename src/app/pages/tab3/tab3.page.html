@@ -1,0 +1,15 @@
+<app-header titulo="Favoritos"></app-header>
+
+<ion-content fullscreen>
+
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        <h3>Remedios Favoritos</h3>
+      </ion-label>
+    </ion-list-header>
+
+    <app-post *ngFor="let tip of itemFavs" [tip]="tip"></app-post>
+  </ion-list>
+</ion-content>

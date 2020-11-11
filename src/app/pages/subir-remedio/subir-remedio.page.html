@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Publicar remedio</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/hoja.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-item class = "input" lines = "none">
+
+    <ion-label class = "nombre" position="stacked">Nombre del remedio:</ion-label>
+    <ion-input type="text" class = "campo" [(ngModel)]="post.titulo"  padding-start = "10px"></ion-input>
+
+    <ion-label class = "nombre" position="stacked">Categoría:</ion-label>
+    <!--<ion-input type = "text" class = "campo" [(ngModel)]="post.categoria"></ion-input>-->
+    <ion-select [(ngModel)]= "post.categoria"  interface="action.sheet" padding-start = "10px" class = "categoria" placeholder="Selecciona una categoría">
+      <ion-select-option *ngFor="let item of data" [value] = "item.name" >
+        {{item.name}}
+      </ion-select-option>
+    </ion-select>
+
+    <ion-label class = "nombre" position="stacked">Ingredientes:</ion-label>
+    <ion-textarea class = "campo2" [(ngModel)]="post.ingredientes"></ion-textarea>
+
+    <ion-label class = "nombre" position="stacked">Descripción:</ion-label>
+    <ion-textarea class = "campo2" [(ngModel)]="post.cuerpo"></ion-textarea>
+
+    <ion-label class = "nombre" position="stacked">Link de una imagen</ion-label>
+    <ion-input type = "text" class = "campo" [(ngModel)]="post.urlToImage"></ion-input>
+
+    <ion-button 
+    class = "boton" color = "#abf000" shape="round" (click)="createPost(post)" >Subir</ion-button>
+
+  </ion-item>
+</ion-content>

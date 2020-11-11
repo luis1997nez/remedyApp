@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+        
+          <ion-back-button defaultHref="/"></ion-back-button>
+        
+    </ion-buttons>
+
+    <ion-title>Administración del remedio</ion-title>
+
+    <ion-buttons slot = "end">
+      
+        <ion-img class = "hojita" src = "assets/img/ajustes.png"></ion-img>
+
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list lines = "full">
+    <ion-item *ngIf="todo">
+      <ion-label position="stacked">Título:</ion-label>
+      <ion-input required type = "text" placeholder="Titulo"
+      [(ngModel)] ="todo.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="todo">
+      <ion-label position="stacked">Categoría:</ion-label>
+      <ion-select [(ngModel)]= "todo.categoria"  interface="action.sheet" padding-start = "10px" class = "categoria" placeholder="Selecciona una categoría">
+        <ion-select-option *ngFor="let item of data" [value] = "item.name" >
+          {{item.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="todo">
+      <ion-label position="stacked">Ingredientes:</ion-label>
+      <ion-input required type = "text" placeholder="Cuerpo"
+      [(ngModel)] ="todo.ingredientes"></ion-input>
+    </ion-item>
+
+
+    <ion-item *ngIf="todo">
+      <ion-label position="stacked">Descripción:</ion-label>
+      <ion-input required type = "text" placeholder="Cuerpo"
+      [(ngModel)] ="todo.cuerpo"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="todo">
+      <ion-label position="stacked">URL de imágen:</ion-label>
+      <ion-input required type = "text" placeholder="Imagen URL"
+      [(ngModel)] ="todo.urlToImage"></ion-input>
+    </ion-item>
+
+</ion-list>
+
+<ion-button expand = "full" (click)="saveTodo()">Save</ion-button>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" color = "danger">
+  <ion-fab-button color = "danger" routerLink="/control-remedio" routerDirection="forward"
+  (click) = "onRemove(todoId)">
+    <ion-icon name = "trash"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
